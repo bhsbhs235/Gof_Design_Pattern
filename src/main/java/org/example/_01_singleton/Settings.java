@@ -49,4 +49,33 @@ public class Settings implements Serializable {
         3.
 
      */
+
+    // 역직렬화시 해당 메서드를 실행함
+    protected Object readResolve(){
+        return getInstance();
+    }
+
+    /*
+        - 자바에서 enum을 사용하지 않고 싱글톤 패턴을 구현하는 방법?
+        - private 생성자와 static 메소드를 사용하는 방법의 단점은?
+            멀티스레드 환경에서 안전하지 못함
+        - enum을 사용해 싱글톤 패턴을 구현하는 방법의 장점과 단점은?
+            장점 :
+                1. 리플렉션, 직렬화, 역직렬화에 안전하다
+            단점 :
+                1. 미리 만들어야한다.
+                2. 상속을 쓰지 못한다
+        - static inner 클래스를 사용해 싱글톤 패턴을 구현하라.
+        {
+            private Settings() {}
+
+            private static class SettingsHolder {
+                private static final Settings SETTINGS = new Settings();
+            }
+
+            public static Settings getInstance() {
+                return SettingsHolder.SETTINGS;
+            }
+         }
+     */
 }

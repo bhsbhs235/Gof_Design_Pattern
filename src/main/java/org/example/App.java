@@ -14,6 +14,7 @@ public class App
 {
     public static void main( String[] args ) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         // 리플렉션을 쓰면 싱글턴을 깨트릴 수 있다.
+        // Enum 타입은 리플렉션을 사용할 수 없다.
         Constructor<Settings> constructor = Settings.class.getDeclaredConstructor();
         constructor.setAccessible(true);
         Settings settings = constructor.newInstance();
@@ -37,6 +38,10 @@ public class App
             e.printStackTrace();
         }
 
-        System.out.println( "Hello World!" );
+        /*
+            따라서 두가지 방법이 권장됨
+            1. Enum 사용
+            2. static inner 클래스(holder)
+         */
     }
 }
