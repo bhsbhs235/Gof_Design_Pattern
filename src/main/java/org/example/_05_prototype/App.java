@@ -17,8 +17,6 @@ public class App {
         GithubIssue clone = (GithubIssue) githubIssue.clone();
         System.out.println(clone.getUrl());
 
-        //repository.setUser("Keesun");
-
         System.out.println(clone != githubIssue); // 인스턴스는 다름
         System.out.println(clone.equals(githubIssue)); // 값은 같음
         System.out.println(clone.getClass() == githubIssue.getClass()); // 타입은 같음
