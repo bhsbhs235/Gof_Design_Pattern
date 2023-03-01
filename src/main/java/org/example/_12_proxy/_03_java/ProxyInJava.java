@@ -1,7 +1,5 @@
 package org.example._12_proxy._03_java;
 
-import me.whiteship.designpatterns._02_structural_patterns._12_proxy._02_after.DefaultGameService;
-
 import java.lang.reflect.Proxy;
 
 public class ProxyInJava {
