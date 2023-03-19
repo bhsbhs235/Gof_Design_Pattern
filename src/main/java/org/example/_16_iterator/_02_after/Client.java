@@ -27,6 +27,9 @@ public class Client {
         /** 여기서 중요한 것은 board 내부 구조가 List인지 Set,tree,stack 인지 몰라도 상관이 없다는 것 (캡슐화, SRP)
          * 위의 말은 구조가 바껴도 Iterator만 받으면 되기 때문에 클라이언트 코드는 바뀌지 않는다
          * 현재는 날짜 순으로 순서 Iterator를 반환하지만 Title 가나다 순으로 Iterator을 리턴하고 싶으면 인터페이스를 구현한 구현체를 만들어 바꿔 껴주면 된다(OCP)
+         *
+         * 이터레이터 패턴
+         * 집합 객체 내부 구조를 노출시키지 않고 순회하는 방법을 제공하는 패턴
          **/
 
         while(recentPostIterator.hasNext()) {
